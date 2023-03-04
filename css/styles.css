@@ -44,7 +44,6 @@ ul {
 button {
   border: 0;
   padding: 0;
-
   cursor: pointer;
 }
 
@@ -54,7 +53,7 @@ address {
 
 img {
   display: block;
-  max-width: 100%;
+  /* width: 100%; */
   height: auto;
 }
 
@@ -73,13 +72,14 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1158px;
 
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 
-  margin: 0 auto;
-  /* outline: 2px solid tomato; */
+  margin-left: auto;
+  margin-right: auto;
+
+  outline: 1px solid yellow;
 }
 
 .link {
@@ -258,8 +258,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  max-width: 1440px;
-  height: 600px;
+  max-width: 428px;
+  height: 432px;
 
   background-color: var(--heading);
   background-image: var(--hero-bg-lgr), url(../images/hero-bg-img.jpg);
@@ -269,17 +269,19 @@ body {
 
 /* Hero Title */
 .hero-title {
-  max-width: 496px;
+  max-width: 320px;
 
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
-  text-align: center;
+
   color: var(--main-bg);
 
+  text-align: center;
+  text-transform: capitalize;
+
   margin: 0 auto;
-  margin-bottom: 24px;
+  margin-bottom: 72px;
 }
 
 /* Hero Button */
@@ -306,69 +308,56 @@ body {
 /* ---------------------------------- */
 /* Section Features */
 .features {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .features-list {
   display: flex;
   flex-wrap: wrap;
-
-  gap: var(--main-cgap);
+  column-gap: var(--main-cgap);
+  row-gap: 72px;
 }
 
 .features-item {
   display: flex;
   flex-direction: column;
-
   gap: 8px;
 
-  flex-basis: 264px;
+  width: 100%;
+}
+
+.features-item > .title {
+  /* font-weight: 700; / default */
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--heading);
 }
 
 .features-icon-wrap {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 112px;
-  background-color: var(--light-bg);
-  border-radius: var(--b-radius);
-}
-
-.features-icon {
-  width: 64px;
-  height: 64px;
+  display: none;
 }
 
 /* Section Directions */
 .directions {
-  padding-top: 0;
-  padding-bottom: 120px;
-}
-
-.directions-title {
-  margin-bottom: 72px;
-}
-
-.directions-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--main-cgap);
-}
-
-.directions-item {
-  flex-basis: calc((100% - 2 * var(--main-cgap)) / 3);
-  border: 1px solid var(--accent);
+  display: none;
 }
 
 /* Section Team */
 .team {
+  padding-top: 96px;
+  padding-bottom: 128px;
+
   background-color: var(--light-bg);
-  padding-top: 120px;
-  padding-bottom: 120px;
+}
+
+.team > .container {
+  max-width: 264px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .team-title {
@@ -377,12 +366,13 @@ body {
 
 .team-list {
   display: flex;
-  gap: var(--main-cgap);
+  flex-wrap: wrap;
+  column-gap: var(--main-cgap);
+  row-gap: 72px;
 }
 
-/* ---------???-------- flex-basis */
 .team-item {
-  max-width: 264px;
+  width: 100%;
   background-color: var(--main-bg);
   box-shadow: var(--shadow);
   border-radius: 0px 0px 4px 4px;
@@ -436,8 +426,8 @@ body {
 
 /* Section Customers */
 .customers {
-  padding-top: 130px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .customers-title {
@@ -449,23 +439,27 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--main-cgap);
+  column-gap: 16px;
+  row-gap: 72px;
 }
 
 .customers-item {
+  width: calc((100% - 16px) / 2);
+  height: 88px;
 }
 
 .customers-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 168px;
-  height: 88px;
 
-  color: var(--subtle-text);
+  width: 100%;
+  height: 100%;
 
   border: 1px solid var(--subtle-text);
   border-radius: var(--b-radius);
+
+  color: var(--subtle-text);
 
   transition: color var(--trans-time) var(--trans-func),
     border var(--trans-time) var(--trans-func);
@@ -528,7 +522,7 @@ body {
 }
 
 .gallery-item {
-  flex-basis: calc((100% - 2 * var(--main-cgap)) / 3);
+  width: 100%;
 
   border: 1px solid var(--accent);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);

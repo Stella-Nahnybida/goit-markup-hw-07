@@ -1,0 +1,62 @@
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+
+    outline-color: yellowgreen;
+  }
+
+  /* Section HERO */
+  .hero-wrap {
+    height: 436px;
+  }
+
+  .hero-title {
+    max-width: 496px;
+
+    font-size: 56px;
+    line-height: 1.07;
+
+    margin-bottom: 40px;
+  }
+
+  /* Section Features */
+  .features-item {
+    width: calc((100% - var(--main-cgap)) / 2);
+  }
+
+  .features-item > .title {
+    text-align: left;
+  }
+
+  /* Section Team */
+  .team {
+    padding-top: 96px;
+    padding-bottom: 104px;
+  }
+
+  .team > .container {
+    max-width: 552px;
+  }
+
+  .team-list {
+    row-gap: 64px;
+  }
+
+  .team-item {
+    width: calc((100% - var(--main-cgap)) / 2);
+  }
+
+  /* Section Customers */
+  .customers-item {
+    width: calc((100% - 2 * var(--main-cgap)) / 3);
+  }
+  /* Section Directions */
+  .directions {
+    display: none;
+  }
+
+  /* Section Projects */
+  .gallery-item {
+    width: calc((100% - var(--main-cgap)) / 2);
+  }
+}
