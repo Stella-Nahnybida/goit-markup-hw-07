@@ -102,6 +102,12 @@
     padding-bottom: 120px;
   }
 
+  .customers > .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .customers-list {
     gap: var(--main-cgap);
   }

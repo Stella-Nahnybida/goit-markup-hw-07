@@ -47,9 +47,14 @@
   }
 
   /* Section Customers */
+  .customers > .container {
+    max-width: 552px;
+  }
+
   .customers-item {
     width: calc((100% - 2 * var(--main-cgap)) / 3);
   }
+
   /* Section Directions */
   .directions {
     display: none;
