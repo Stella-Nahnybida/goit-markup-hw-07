@@ -2,7 +2,30 @@
   .container {
     max-width: 768px;
 
-    outline-color: yellowgreen;
+    /* outline-color: yellowgreen; */
+  }
+
+  .header-list {
+    display: flex;
+
+    margin-left: 123px;
+  }
+
+  .header-link.current::after {
+    top: calc(100% + 18px);
+  }
+
+  /* Address */
+  .address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .address-link {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
   }
 
   /* Section HERO */
@@ -21,7 +44,7 @@
 
   /* Section Features */
   .features-item {
-    width: calc((100% - var(--main-cgap)) / 2);
+    width: calc((100% - 24px) / 2);
   }
 
   .features-item > .title {
@@ -43,7 +66,7 @@
   }
 
   .team-item {
-    width: calc((100% - var(--main-cgap)) / 2);
+    width: calc((100% - 24px) / 2);
   }
 
   /* Section Customers */
@@ -51,17 +74,69 @@
     max-width: 552px;
   }
 
+  .customers-list {
+    column-gap: 24px;
+  }
+
   .customers-item {
-    width: calc((100% - 2 * var(--main-cgap)) / 3);
+    width: calc((100% - 2 * 24px) / 3);
   }
 
-  /* Section Directions */
-  .directions {
-    display: none;
-  }
-
+  /* PORTFOLIO PAGE */
   /* Section Projects */
+  .projects {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
+
+  .filters-list {
+    margin-bottom: 64px;
+  }
+
+  .gallery-list {
+    row-gap: 72px;
+  }
+
   .gallery-item {
-    width: calc((100% - var(--main-cgap)) / 2);
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* Footer */
+
+  .footer > .container {
+    max-width: 552px;
+  }
+
+  .footer-wrap {
+    justify-content: left;
+  }
+
+  .footer .logo {
+    text-align: left;
+  }
+
+  .footer-title {
+    text-align: left;
+  }
+
+  .subscribe-form {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    gap: 24px;
+  }
+
+  .subscribe-label {
+    width: 264px;
+  }
+
+  /* Modal Window */
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: 24px;
   }
 }

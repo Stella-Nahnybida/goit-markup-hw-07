@@ -1,12 +1,46 @@
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1158px;
-    /* max-width: 1200px; */
 
     padding-left: 15px;
     padding-right: 15px;
 
-    outline-color: tomato;
+    /* outline-color: tomato; */
+  }
+
+  .header {
+    height: 76px;
+  }
+
+  .header-list {
+    display: flex;
+
+    margin-left: 76px;
+  }
+
+  .header-link.current::after {
+    top: calc(100% + 24px);
+  }
+
+  /* Address */
+  .address-list {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .address-item {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .address-link {
+    display: block;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 
   /* Section HERO */
@@ -31,7 +65,7 @@
   }
 
   .features-item {
-    width: calc((100% - (3 * var(--main-cgap))) / 4);
+    width: calc((100% - (3 * 24px)) / 4);
   }
 
   .features-item > .title {
@@ -73,11 +107,11 @@
   .directions-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--main-cgap);
+    gap: 24px;
   }
 
   .directions-item {
-    width: calc((100% - 2 * var(--main-cgap)) / 3);
+    width: calc((100% - 2 * 24px) / 3);
     border: 1px solid var(--accent);
   }
   /* Section Team */
@@ -93,7 +127,7 @@
   }
 
   .team-item {
-    width: calc((100% - 3 * var(--main-cgap)) / 4);
+    width: calc((100% - 3 * 24px) / 4);
   }
 
   /* Section Customers */
@@ -109,14 +143,43 @@
   }
 
   .customers-list {
-    gap: var(--main-cgap);
+    gap: 24px;
   }
 
   .customers-item {
-    width: calc((100% - 5 * var(--main-cgap)) / 6);
+    width: calc((100% - 5 * 24px) / 6);
   }
+
+  /* PORTFOLIO PAGE */
   /* Section Projects */
+  .projects {
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+
+  .filters-list {
+    margin-bottom: 72px;
+  }
+
+  .gallery-list {
+    row-gap: 48px;
+  }
+
   .gallery-item {
-    width: calc((100% - 2 * var(--main-cgap)) / 3);
+    width: calc((100% - 2 * 24px) / 3);
+  }
+
+  /* Footer */
+
+  .footer > .container {
+    max-width: 1158px;
+  }
+
+  .footer-wrap {
+    column-gap: 80px;
+  }
+
+  .footer-logo {
+    margin-right: auto;
   }
 }

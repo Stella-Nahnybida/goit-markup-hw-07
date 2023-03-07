@@ -1,12 +1,11 @@
 @media screen and (min-width: 480px) {
   .container {
     max-width: 428px;
-    outline-color: cyan;
-  }
-  /* Section Team */
 
-  /* Section Directions */
-  .directions {
-    display: none;
+    /* outline-color: cyan; */
+  }
+
+  .form-field {
+    width: 398px;
   }
 }
