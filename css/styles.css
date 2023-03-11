@@ -257,10 +257,23 @@ body {
   outline: 1px solid tomato;
 }
 
+.menu > .container {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 320px;
+  height: 100%;
+
+  padding: 0;
+  overflow-y: auto;
+}
+
 .menu-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  margin-bottom: auto;
 }
 
 .menu-link {
@@ -829,6 +842,7 @@ body {
   top: 50%;
   left: 50%;
 
+  width: 100%;
   padding: 24px 16px;
 
   background-color: #fcfcfc;
@@ -876,7 +890,7 @@ body {
 
 .modal-title {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.02em;
@@ -898,7 +912,6 @@ body {
 
 .form-field {
   width: 100%;
-  max-width: 320px;
 }
 
 .form-label {
@@ -918,7 +931,6 @@ body {
 
 .input-field {
   width: 100%;
-  /* max-width: 320px; */
 
   color: var(--main-text);
 
@@ -982,12 +994,14 @@ body {
 }
 
 .check-privacy {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #757575;
+
+  /* text-align: center; */
 }
 
 .privacy-policy {
@@ -995,11 +1009,7 @@ body {
   color: var(--brand);
 }
 
-.check-privacy span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.check-icon {
   width: 16px;
   height: 16px;
 

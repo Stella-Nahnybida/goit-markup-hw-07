@@ -202,10 +202,7 @@
 
   /* Modal Window */
   .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
+    max-width: 408px;
     padding: 24px;
   }
 }

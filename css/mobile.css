@@ -3,7 +3,20 @@
     max-width: 428px;
   }
 
-  .form-field {
-    max-width: 360px;
+  .menu > .container {
+    max-width: 353px;
+  }
+
+  .menu-address-item > .tel {
+    font-size: 36px;
+  }
+
+  /* Modal Window */
+  .modal {
+    max-width: 392px;
+  }
+
+  .modal-title {
+    font-size: 16px;
   }
 }
