@@ -1,36 +1,99 @@
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
 
-    /* outline-color: yellowgreen; */
+  /* HEADER */
+  .header {
+    height: 72px;
+    border: 0;
+    border-bottom: 1px solid var(--accent);
   }
 
   .header-list {
     display: flex;
+    justify-content: center;
+    gap: 40px;
 
-    margin-left: 123px;
+    margin: 0 120px;
+  }
+
+  .header-link {
+    position: relative;
+    display: block;
+
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--heading);
+
+    transition: color var(--trans-time) var(--trans-func);
+  }
+
+  .header-link:is(:hover, :focus),
+  .header-link.current {
+    color: var(--pressed);
   }
 
   .header-link.current::after {
-    top: calc(100% + 18px);
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 4px;
+
+    top: 45px;
+    left: 0;
+
+    background-color: var(--pressed);
+    border-radius: 2px;
   }
 
   /* Address */
   .address-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
   }
 
   .address-link {
+    display: block;
+    padding: 0;
+    margin: 0;
+
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
+    color: currentColor;
+
+    transition: color var(--trans-time) var(--trans-func);
+  }
+
+  .address-link:is(:hover, :focus),
+  .address-link.current {
+    color: var(--pressed);
+  }
+
+  .menu-open {
+    display: none;
   }
 
   /* Section HERO */
   .hero-wrap {
+    width: 100%;
+    max-width: 768px;
     height: 436px;
+
+    background-image: var(--hero-bg-lgr), url(../images/hero-bg-tab.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-wrap {
+      background-image: var(--hero-bg-lgr), url(../images/hero-bg-tab.jpg);
+    }
   }
 
   .hero-title {
@@ -90,7 +153,13 @@
   }
 
   .filters-list {
+    justify-content: center;
+
     margin-bottom: 64px;
+  }
+
+  .filters-button {
+    padding: 12px 24px;
   }
 
   .gallery-list {

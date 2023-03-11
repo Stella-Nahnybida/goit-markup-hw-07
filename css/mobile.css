@@ -1,11 +1,9 @@
 @media screen and (min-width: 480px) {
   .container {
     max-width: 428px;
-
-    /* outline-color: cyan; */
   }
 
   .form-field {
-    width: 398px;
+    max-width: 360px;
   }
 }

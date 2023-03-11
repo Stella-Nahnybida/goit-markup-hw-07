@@ -20,6 +20,8 @@
     0px 2px 2px rgba(0, 0, 0, 0.12);
   --modal-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --menu-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   /* Transitions */
   --trans-time: 250ms;
   --trans-func: cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,7 +54,7 @@ address {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -76,8 +78,6 @@ body {
   padding-right: 16px;
 
   margin: 0 auto;
-
-  /* outline: 1px solid yellow; */
 }
 
 .link {
@@ -162,23 +162,26 @@ body {
 }
 
 .header {
+  position: relative;
+
   height: 70px;
+
   background-color: var(--main-bg);
-  padding-top: 24px;
   box-shadow: var(--shadow);
-  border-bottom: 1px solid var(--accent);
+  border: 1px solid var(--accent);
 }
 
 .header-wrap {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
 }
 
-/* Site Navigation */
 .header-navigation {
   display: flex;
   align-items: center;
-
   margin-right: auto;
 }
 
@@ -186,57 +189,149 @@ body {
   color: var(--heading);
 }
 
-.header-list {
-  display: none;
-  gap: 40px;
-}
-
-.header-link {
-  position: relative;
-  display: block;
-
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--heading);
-
-  transition: color var(--trans-time) var(--trans-func);
-}
-
-.header-link:is(:hover, :focus),
-.header-link.current {
-  color: var(--pressed);
-}
-
-.header-link.current::after {
-  content: "";
-  position: absolute;
-
-  width: 100%;
-  height: 4px;
-
-  left: 0;
-
-  background-color: var(--pressed);
-  border-radius: 2px;
-}
-
-/* Address */
+.header-list,
 .address-list {
   display: none;
 }
 
-.address-link {
-  display: block;
-  padding: 0;
-  color: currentColor;
+/* Menu Open Button */
+.menu-open {
+  color: var(--heading);
+  background-color: transparent;
+}
+
+.menu-open-icon {
+  width: 29px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* Menu Close Button */
+.menu-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--heading);
+  background: var(--accent);
+  /* opacity: 0.1; */
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  margin-left: auto;
+  margin-bottom: 32px;
+
+  transition: color var(--trans-time) var(--trans-func),
+    background-color var(--trans-time) var(--trans-func);
+}
+
+.menu-close:is(:hover, :focus) {
+  color: var(--main-bg);
+  background-color: var(--pressed);
+}
+
+.menu-close-icon {
+  width: 8px;
+  height: 8px;
+  fill: currentColor;
+}
+
+.menu {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 24px 24px 40px 40px;
+
+  background-color: var(--main-bg);
+  box-shadow: var(--menu-shadow);
+
+  outline: 1px solid tomato;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.menu-link {
+  transition: color var(--trans-time) var(--trans-func);
+}
+
+.menu-link:is(:hover, :focus),
+.menu-link.current {
+  color: var(--pressed);
+}
+
+/* Address */
+.menu-address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-bottom: 48px;
+}
+
+.menu-address-item > .tel {
+  font-weight: 700;
+  color: var(--brand);
 
   transition: color var(--trans-time) var(--trans-func);
 }
 
-.address-link:is(:hover, :focus),
-.address-link.current {
+.menu-address-item > .email {
+  color: var(--main-text);
+
+  transition: color var(--trans-time) var(--trans-func);
+}
+
+.menu-address-item:is(:hover, :focus) a,
+.menu-address-item.current a {
   color: var(--pressed);
+}
+
+.menu-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 56px;
+}
+
+.menu-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: var(--light-bg);
+  background-color: var(--brand);
+  border-radius: 50%;
+
+  transition: background-color var(--trans-time) var(--trans-func);
+}
+
+.menu-social-link:is(:hover, :focus),
+.menu-social-link.current {
+  background-color: var(--pressed);
+}
+
+.menu-social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
 /* ------------------------------------ */
@@ -244,6 +339,7 @@ body {
 
 /* Section HERO */
 .hero {
+  background-color: var(--heading);
 }
 
 .hero-wrap {
@@ -252,13 +348,23 @@ body {
   justify-content: center;
   align-items: center;
 
+  width: 100%;
   max-width: 428px;
   height: 432px;
 
-  background-color: var(--heading);
-  background-image: var(--hero-bg-lgr), url(../images/hero-bg-img.jpg);
+  background-image: var(--hero-bg-lgr), url(../images/hero-bg-mob.jpg);
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero-wrap {
+    background-image: var(--hero-bg-lgr), url(../images/hero-bg-mob.jpg);
+  }
 }
 
 /* Hero Title */
@@ -274,7 +380,6 @@ body {
   text-align: center;
   text-transform: capitalize;
 
-  margin: 0 auto;
   margin-bottom: 72px;
 }
 
@@ -479,7 +584,7 @@ body {
 .filters-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   column-gap: 24px;
   row-gap: 16px;
@@ -491,7 +596,7 @@ body {
   color: var(--brand);
 
   background-color: var(--light-bg);
-  padding: 12px 24px;
+  padding: 8px 16px;
   border: 1px solid var(--accent);
 
   transition: color var(--trans-time) var(--trans-func),
@@ -581,8 +686,6 @@ body {
 }
 
 /* Footer Logo */
-.footer-logo {
-}
 
 .footer .logo {
   text-align: center;
@@ -649,8 +752,6 @@ body {
 }
 
 /* Footer Subscribe */
-.subscribe {
-}
 
 .subscribe-form {
   display: flex;
@@ -771,7 +872,6 @@ body {
 .modal-close-icon {
   width: 8px;
   height: 8px;
-
   fill: currentColor;
 }
 
@@ -799,7 +899,7 @@ body {
 
 .form-field {
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
 }
 
 .form-label {
@@ -819,7 +919,7 @@ body {
 
 .input-field {
   width: 100%;
-  max-width: 320px;
+  /* max-width: 320px; */
 
   color: var(--main-text);
 
@@ -880,11 +980,6 @@ body {
 .checkbox-wrap {
   margin-top: 8px;
   /* position: relative; */
-}
-
-.form-checkbox {
-  /* appearance: none; */
-  /* position: absolute; */
 }
 
 .check-privacy {

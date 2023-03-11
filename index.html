@@ -58,8 +58,102 @@
             </li>
           </ul>
         </address>
+
+        <!-- Mobile Menu -->
+        <button class="menu-open" type="button" data-menu-open>
+          <svg class="menu-open-icon">
+            <use href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="menu is-hidden" data-menu>
+        <button class="menu-close" type="button" data-menu-close>
+          <svg class="menu-close-icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <ul class="menu-list list">
+          <li class="menu-item">
+            <a
+              class="menu-link link heading current"
+              href="./index.html"
+              data-menu-close
+              >Studio</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              class="menu-link link heading"
+              href="./portfolio.html"
+              data-menu-close
+              >Portfolio</a
+            >
+          </li>
+          <li class="menu-item">
+            <a class="menu-link link heading" href="" data-menu-close
+              >Contacts</a
+            >
+          </li>
+        </ul>
+
+        <address>
+          <ul class="menu-address-list list">
+            <li class="menu-address-item">
+              <a
+                class="tel link heading"
+                href="tel:+110001111111"
+                data-menu-close
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+            <li class="menu-address-item">
+              <a
+                class="email link title"
+                href="mailto:info@devstudio.com"
+                data-menu-close
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+          <ul class="menu-social-list list">
+            <li class="menu-social-item">
+              <a class="menu-social-link link" href="" data-menu-close>
+                <svg class="menu-social-icon">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="menu-social-item">
+              <a class="menu-social-link link" href="" data-menu-close>
+                <svg class="menu-social-icon">
+                  <use href="./images/icons.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="menu-social-item">
+              <a class="menu-social-link link" href="" data-menu-close>
+                <svg class="menu-social-icon">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="menu-social-item">
+              <a class="menu-social-link link" href="" data-menu-close>
+                <svg class="menu-social-icon">
+                  <use href="./images/icons.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </address>
       </div>
     </header>
+
     <main>
       <!-- Hero -->
       <section class="hero">
@@ -70,7 +164,6 @@
           </button>
         </div>
       </section>
-      <!-- Features -->
       <section class="features">
         <div class="container">
           <h2 class="features-title heading visually-hidden">Our Advantages</h2>
@@ -138,6 +231,10 @@
               <img
                 src="./images/desktop-applications.jpg"
                 alt="Desktop applications"
+                srcset="
+                  ./images/desktop-applications.jpg    1x,
+                  ./images/desktop-applications-2x.jpg 2x
+                "
                 width="360"
                 height="300"
               />
@@ -147,6 +244,10 @@
               <img
                 src="./images/mobile-applications.jpg"
                 alt="Mobile applications"
+                srcset="
+                  ./images/mobile-applications.jpg    1x,
+                  ./images/mobile-applications-2x.jpg 2x
+                "
                 width="360"
                 height="300"
               />
@@ -156,6 +257,10 @@
               <img
                 src="./images/design-solutions.jpg"
                 alt="Design solutions"
+                srcset="
+                  ./images/design-solutions.jpg    1x,
+                  ./images/design-solutions-2x.jpg 2x
+                "
                 width="360"
                 height="300"
               />
@@ -172,6 +277,10 @@
               <img
                 src="./images/mark-guerrero.jpg"
                 alt="Mark Guerrero"
+                srcset="
+                  ./images/mark-guerrero.jpg    1x,
+                  ./images/mark-guerrero-2x.jpg 2x
+                "
                 width="264"
                 height="260"
               />
@@ -217,6 +326,7 @@
               <img
                 src="./images/tom-ford.jpg"
                 alt="Tom Ford"
+                srcset="./images/tom-ford.jpg 1x, ./images/tom-ford-2x.jpg 2x"
                 width="264"
                 height="260"
               />
@@ -262,6 +372,10 @@
               <img
                 src="./images/camila-garcia.jpg"
                 alt="Camila Garcia"
+                srcset="
+                  ./images/camila-garcia.jpg    1x,
+                  ./images/camila-garcia-2x.jpg 2x
+                "
                 width="264"
                 height="260"
               />
@@ -307,6 +421,10 @@
               <img
                 src="./images/daniel-wilson.jpg"
                 alt="Daniel Wilson"
+                srcset="
+                  ./images/daniel-wilson.jpg    1x,
+                  ./images/daniel-wilson-2x.jpg 2x
+                "
                 width="264"
                 height="260"
               />
@@ -570,7 +688,7 @@
                   ><svg class="check-icon">
                     <use href="./images/icons.svg#icon-check"></use></svg
                 ></span>
-                I accept the terms and conditions of the &nbsp;
+                I accept the terms and conditions of the
                 <a class="privacy-policy" href="">Privacy Policy</a>
               </label>
             </div>
@@ -581,7 +699,8 @@
       </div>
     </div>
 
-    <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

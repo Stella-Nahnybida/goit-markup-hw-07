@@ -1,43 +1,22 @@
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1158px;
-
     padding-left: 15px;
     padding-right: 15px;
-
-    /* outline-color: tomato; */
   }
 
-  .header {
-    height: 76px;
-  }
-
+  /* HEADER */
   .header-list {
-    display: flex;
-
     margin-left: 76px;
-  }
-
-  .header-link.current::after {
-    top: calc(100% + 24px);
   }
 
   /* Address */
   .address-list {
-    display: flex;
     flex-direction: row;
     gap: 40px;
   }
 
-  .address-item {
-    display: block;
-    padding: 0;
-    margin: 0;
-  }
-
   .address-link {
-    display: block;
-
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -45,8 +24,20 @@
 
   /* Section HERO */
   .hero-wrap {
+    width: 100%;
     max-width: 1440px;
     height: 600px;
+
+    background-image: var(--hero-bg-lgr), url(../images/hero-bg-dt.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-wrap {
+      background-image: var(--hero-bg-lgr), url(../images/hero-bg-dt.jpg);
+    }
   }
 
   .hero-title {
