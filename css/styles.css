@@ -282,6 +282,7 @@ body {
 }
 
 .menu-address-item > .tel {
+  font-size: 26px;
   font-weight: 700;
   color: var(--brand);
 
@@ -302,10 +303,8 @@ body {
 .menu-social-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  gap: 56px;
 }
 
 .menu-social-link {
